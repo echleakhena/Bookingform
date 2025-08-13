@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function formLogin()
     {
-        return view('Auth.Login'); 
+        return view('Auth.Login');
     }
 
     public function login(Request $request)
@@ -26,7 +26,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->route('dashboard'); // route name, no leading slash
         }
-
+        
         return back()->withErrors([
             'email' => 'Invalid credentials. Please try again.',
         ])->withInput($request->only('email'));
