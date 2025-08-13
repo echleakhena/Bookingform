@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
 
         // 1. Create User
         $user = User::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
+            'name' => 'supperadmin',
+            'email' => 'supperadmin@gmail.com',
             'password' => Hash::make('password'),
-            'image' => 'admin.jpg', // Make sure 'image' is a column in users table
+            'image' => 'supperadmin.jpg', // Make sure 'image' is a column in users table
         ]);
 
         // 2. Assign Role

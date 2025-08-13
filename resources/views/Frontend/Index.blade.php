@@ -12,18 +12,18 @@
             --accent: #F7D1CD; /* Blush pink */
             --light: #F8F4F9; /* Light lavender */
             --dark: #392F5A; /* Deep indigo */
-            --text: #333333; 
+            --text: #333333;
             --success: #7FB685; /* Soft green */
             --error: #E56B6F; /* Coral */
             --gold: #D4A76A; /* Accent gold */
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
@@ -39,7 +39,7 @@
             background-position: center;
             background-attachment: fixed;
         }
-        
+
         .container {
             max-width: 750px;
             width: 100%;
@@ -53,7 +53,7 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .container::before {
             content: '';
             position: absolute;
@@ -63,7 +63,7 @@
             height: 100%;
             background: linear-gradient(to bottom, var(--primary), var(--secondary));
         }
-        
+
         h1 {
             text-align: center;
             color: var(--dark);
@@ -73,7 +73,7 @@
             position: relative;
             padding-bottom: 15px;
         }
-        
+
         h1::after {
             content: '';
             position: absolute;
@@ -84,22 +84,22 @@
             height: 3px;
             background: linear-gradient(to right, var(--primary), var(--gold));
         }
-        
+
         .logo {
             text-align: center;
             margin-bottom: 20px;
         }
-        
+
         .logo img {
             height: 60px;
             margin-bottom: 10px;
         }
-        
+
         .form-group {
             margin-bottom: 25px;
             position: relative;
         }
-        
+
         label {
             display: block;
             margin-bottom: 8px;
@@ -107,11 +107,11 @@
             color: var(--dark);
             font-size: 0.95rem;
         }
-        
+
         .input-with-icon {
             position: relative;
         }
-        
+
         .input-icon {
             position: absolute;
             left: 15px;
@@ -120,7 +120,7 @@
             color: var(--primary);
             z-index: 1;
         }
-        
+
         input[type="text"],
         input[type="tel"],
         input[type="email"],
@@ -140,17 +140,17 @@
             background-color: rgba(255, 255, 255, 0.8);
             color: var(--text);
         }
-        
+
         select {
             padding-left: 45px;
             background-position: right 15px center;
         }
-        
+
         textarea {
             padding-left: 45px;
             min-height: 100px;
         }
-        
+
         input:focus,
         select:focus,
         textarea:focus {
@@ -159,32 +159,32 @@
             box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.2);
             background-color: white;
         }
-        
+
         .radio-group {
             display: flex;
             gap: 25px;
             margin-top: 8px;
         }
-        
+
         .radio-option {
             display: flex;
             align-items: center;
         }
-        
+
         .radio-option input {
             margin-right: 10px;
             accent-color: var(--primary);
             width: 18px;
             height: 18px;
         }
-        
+
         .service-options {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 12px;
             margin-top: 8px;
         }
-        
+
         .checkbox-option {
             display: flex;
             align-items: center;
@@ -194,19 +194,19 @@
             border: 1px solid #e0e0e0;
             transition: all 0.3s;
         }
-        
+
         .checkbox-option:hover {
             border-color: var(--primary);
             transform: translateY(-2px);
         }
-        
+
         .checkbox-option input {
             margin-right: 10px;
             accent-color: var(--primary);
             width: 18px;
             height: 18px;
         }
-        
+
         button {
             background: linear-gradient(to right, var(--primary), var(--dark));
             background-color: var(--primary);
@@ -224,13 +224,13 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         button:hover {
             background-color: var(--dark);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(139, 95, 191, 0.3);
         }
-        
+
         button::after {
             content: '';
             position: absolute;
@@ -241,11 +241,11 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: 0.5s;
         }
-        
+
         button:hover::after {
             left: 100%;
         }
-        
+
         .error {
             color: var(--error);
             font-size: 0.85rem;
@@ -253,7 +253,7 @@
             display: none;
             font-weight: 500;
         }
-        
+
         .success-message {
             display: none;
             background: linear-gradient(to right, var(--success), #8FCB9B);
@@ -264,14 +264,14 @@
             margin-top: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .form-footer {
             text-align: center;
             margin-top: 30px;
             font-size: 0.9rem;
             color: #666;
         }
-        
+
         /* Image upload styling */
         .image-upload {
             display: flex;
@@ -284,31 +284,31 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        
+
         .image-upload:hover {
             border-color: var(--primary);
             background-color: rgba(255, 255, 255, 0.8);
         }
-        
+
         .image-upload i {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 12px;
         }
-        
+
         .image-upload p {
             margin: 0;
             color: var(--text);
             text-align: center;
             font-weight: 500;
         }
-        
+
         .image-upload small {
             color: #777;
             font-size: 0.85rem;
             margin-top: 5px;
         }
-        
+
         .image-preview {
             display: none;
             margin-top: 15px;
@@ -318,7 +318,7 @@
             border: 1px solid #e0e0e0;
             object-fit: contain;
         }
-        
+
         /* Select dropdown styling */
         select {
             appearance: none;
@@ -327,44 +327,44 @@
             background-position: right 15px center;
             background-size: 18px;
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .container {
                 padding: 30px;
             }
-            
+
             .service-options {
                 grid-template-columns: 1fr 1fr;
             }
-            
+
             h1 {
                 font-size: 1.9rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 25px 20px;
             }
-            
+
             h1 {
                 font-size: 1.7rem;
             }
-            
+
             .service-options {
                 grid-template-columns: 1fr;
             }
-            
+
             .radio-group {
                 flex-direction: column;
                 gap: 12px;
             }
-            
+
             input, select, textarea {
                 padding: 12px 15px 12px 40px;
             }
-            
+
             .input-icon {
                 left: 12px;
                 font-size: 0.9rem;
@@ -376,16 +376,16 @@
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .success-message {
             animation: fadeIn 0.4s ease-out;
         }
-        
+
         /* Floating labels effect */
         .form-group.focused label {
             color: var(--primary);
         }
-        
+
         /* Password toggle */
         .password-toggle {
             position: absolute;
@@ -394,11 +394,11 @@
             cursor: pointer;
             color: var(--secondary);
         }
-        
+
         .password-toggle:hover {
             color: var(--primary);
         }
-        
+
         /* Toggle button styling */
         .toggle-btn {
             padding: 12px 20px;
@@ -416,20 +416,20 @@
             transition: all 0.3s;
             width: 100%;
         }
-        
+
         .toggle-btn:hover {
             background-color: var(--dark);
             transform: translateY(-2px);
         }
-        
+
         .toggle-btn i {
             transition: transform 0.3s;
         }
-        
+
         .toggle-btn.active i {
             transform: rotate(180deg);
         }
-        
+
         /* Service options container */
         .service-options-container {
             margin-top: 15px;
@@ -438,7 +438,7 @@
             border-radius: 8px;
             border: 1px solid #e0e0e0;
         }
-        
+
         /* Service option icons */
         .service-icon {
             margin-right: 10px;
@@ -496,11 +496,21 @@
         <div class="logo">
             <h1><i class="fas fa-spa" style="color: var(--primary); margin-right: 10px;"></i>Maple Salon</h1>
         </div>
-        
+
+        @if ($errors->any())
+            <div class="alert alert-danger text-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
      <form action="{{ route('store.booking') }}" method="POST" enctype="multipart/form-data" id="registrationForm">
     @csrf
     <input type="hidden" name="status" value="processing">
-    
+
     <div class="form-group">
         <label for="name">ឈ្មោះ*</label>
         <div class="input-with-icon">
@@ -509,7 +519,7 @@
         </div>
         <div id="nameError" class="error">សូមបញ្ចូលឈ្មោះរបស់អ្នក</div>
     </div>
-    
+
     <div class="form-group">
         <label for="phone">លេខទូរស័ព្ទ*</label>
         <div class="input-with-icon">
@@ -518,7 +528,7 @@
         </div>
         <div id="phoneError" class="error">សូមបញ្ចូលលេខទូរស័ព្ទរបស់អ្នក</div>
     </div>
-  
+
    <div class="form-group floating-label with-icon">
                                 <i class="fas fa-cut icon-left"></i>
                                 <select name="service_id" id="service" class="form-control" required>
@@ -529,7 +539,7 @@
                                 </select>
                                 <label for="service">សេវាកម្ម</label>
                             </div>
-    
+
     <div class="form-group">
         <label for="date">កាលបរិច្ឆេទកក់*</label>
         <div class="input-with-icon">
@@ -572,8 +582,8 @@
         </div>
         <div id="branchError" class="error">សូមជ្រើសរើសសាខាដែលអ្នកពេញចិត្ត</div>
     </div>
-   
-   
+
+
 
     <div class="toggle-form-trigger" id="toggleFormTrigger">
         <p>Click ត្រង់នេះ ប្រសិនបើអ្នកចង់បង្ហោះសំណើបន្ថែមរបស់អ្នក</p>
@@ -604,19 +614,19 @@
                 <textarea id="note" name="note" rows="3" placeholder="សំណើពិសេស/កំណត់ចំណាំសម្រាប់អ្នករចនាម៉ូដរបស់យើង"></textarea>
             </div>
         </div>
-    </div>       
-    
+    </div>
+
     <button type="submit">
         <i class="fas fa-calendar-check"></i> ចាប់ផ្តើមកក់
     </button>
 </form>
-        
+
         <div id="successMessage" class="success-message">
             <h3><i class="fas fa-check-circle"></i> Welcome to Maple Salon!</h3>
             <p>Your appointment request has been received. We'll confirm your booking shortly.</p>
             <p>Check your email for confirmation details!</p>
         </div>
-        
+
         <div class="form-footer">
             <p>សម្រាប់ព័តមានបន្ថែម ​​​​​​​​​​​សូមទាក់ទងមកយើងខ្ញុំ <a href="tel:070604747" style="color: var(--primary); font-weight: 600;"><i class="fas fa-sign-in-alt"></i> 070604747</a></p>
         </div>
@@ -631,7 +641,7 @@
                 this.querySelector('p').textContent = 'បិទប្រអប់នេះ';
             } else {
                 formContainer.style.display = 'none';
-                this.querySelector('p').textContent = 'Click ត្រង់នេះ ប្រសិនបើអ្នកចង់បង្ហោះសំណើបន្ថែមរបស់អ្នក'; 
+                this.querySelector('p').textContent = 'Click ត្រង់នេះ ប្រសិនបើអ្នកចង់បង្ហោះសំណើបន្ថែមរបស់អ្នក';
             }
         });
 
@@ -639,7 +649,7 @@
         function toggleServices() {
             const serviceOptions = document.getElementById('serviceOptions');
             const toggleBtn = document.getElementById('servicesToggle');
-            
+
             if (serviceOptions.style.display === 'none') {
                 serviceOptions.style.display = 'block';
                 toggleBtn.classList.add('active');
@@ -665,12 +675,12 @@
         imageInput.addEventListener('change', function() {
             if (this.files && this.files[0]) {
                 const reader = new FileReader();
-                
+
                 reader.onload = function(e) {
                     imagePreview.src = e.target.result;
                     imagePreviewContainer.style.display = 'block';
                 }
-                
+
                 reader.readAsDataURL(this.files[0]);
             }
         });
@@ -684,7 +694,7 @@
         // Form validation
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             let isValid = true;
-            
+
             // Validate name
             const name = document.getElementById('name').value.trim();
             if (name === '') {
@@ -693,7 +703,7 @@
             } else {
                 document.getElementById('nameError').style.display = 'none';
             }
-            
+
             // Validate phone
             const phone = document.getElementById('phone').value.trim();
             if (phone === '') {
@@ -702,7 +712,7 @@
             } else {
                 document.getElementById('phoneError').style.display = 'none';
             }
-            
+
             // Validate at least one service is selected
             const services = document.querySelectorAll('input[name="service_id[]"]:checked');
             if (services.length === 0) {
@@ -711,7 +721,7 @@
             } else {
                 document.getElementById('serviceError').style.display = 'none';
             }
-            
+
             // Validate date
             const date = document.getElementById('date').value;
             if (date === '') {
@@ -720,7 +730,7 @@
             } else {
                 document.getElementById('dateError').style.display = 'none';
             }
-            
+
             // Validate time
             const time = document.getElementById('time').value;
             if (time === '') {
@@ -729,7 +739,7 @@
             } else {
                 document.getElementById('timeError').style.display = 'none';
             }
-            
+
             // Validate branch
             const branch = document.querySelector('select[name="branch_id"]').value;
             if (branch === '') {
@@ -738,7 +748,7 @@
             } else {
                 document.getElementById('branchError').style.display = 'none';
             }
-            
+
             if (!isValid) {
                 e.preventDefault();
             } else {
@@ -746,7 +756,7 @@
                 e.preventDefault();
                 document.getElementById('registrationForm').style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
-                
+
                 // In a real application, you would submit the form here
                 // this.submit();
             }

@@ -12,7 +12,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class BookingController extends Controller
-{  
+{
        public function __construct(){
         $this->middleware(['permission:bookings.view'])->only('List');
         $this->middleware(['permission:bookings.add'])->only('Store');
@@ -20,7 +20,7 @@ class BookingController extends Controller
         $this->middleware(['permission:bookings.delete'])->only('Delete');
 
        }
-    
+
 
        public function FormRegister(){
          $services = Service::all();
@@ -29,8 +29,8 @@ class BookingController extends Controller
     }
 
     public function alert(){
-          
-         
+
+
         return view('Frontend.Alert');
     }
 
@@ -51,7 +51,7 @@ public function List(Request $request)
         ->whereBetween('created_at', [$start, $end])
         ->count();
     $bookings = Booking::orderBy('created_at', 'desc')
-        ->paginate(50) 
+        ->paginate(50)
         ->withQueryString();
 
     return view('Backend.Booking.List', compact('bookings', 'services', 'branches', 'confirmedBookings', 'time'));
@@ -64,16 +64,16 @@ public function List(Request $request)
                     }
 
 public function Store(Request $request)
-{ 
+{
     $request->validate([
         'name' => 'required|string|max:255',
         'phone' => 'required|string|max:20',
         'branch_id' => 'required|exists:branches,id',
         'service_id' => 'required|exists:services,id',
-        'know_through' => 'required|in:1,2,3,4,5,6',
+        'know_through' => 'nullable|in:1,2,3,4,5,6',
         'booking_date' => 'required|date',
         'booking_time' => 'required|date_format:H:i',
-        'payment' => 'required|numeric|min:0',
+        'payment' => 'nullable|numeric|min:0',
         'status' => 'required|in:confirmed,processing,cancel',
         'note' => 'nullable|string',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
@@ -129,29 +129,29 @@ $message = "🆕 <b>New Booking Registered</b>\n\n"
                         $services = Service::all();
                         $branches  = Branch::all();
         return view('Backend.Booking.Update',compact('booking','services','branches'));
-    }  
-    
-    
-    public function update(Request $request, $id)
-{
+    }
+
+
+            public function update(Request $request, $id)
+            {
                         $request->validate([
                             'name' => 'required|string|max:255',
                             'phone' => 'required|string|max:20',
                             'branch_id' => 'required|exists:branches,id',
                             'service_id' => 'required|exists:services,id',
-                            'know_through' => 'required|in:1,2,3,4,5,6',
+                            'know_through' => 'nullable|in:1,2,3,4,5,6',
                             'booking_date' => 'required|date',
                             'booking_time' => 'required',
                             'status' => 'required|in:confirmed,processing,cancel',
                             'note' => 'nullable|string',
-                            'payment'=>'required',
+                            'payment'=>'nullable',
                             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120', // 5MB
                         ]);
 
                         try {
                             $booking = Booking::findOrFail($id); // Find the existing booking
 
-                            $booking->user_id = auth()->id(); 
+                            $booking->user_id = auth()->id();
                             $booking->name = $request->name;
                             $booking->phone = $request->phone;
                             $booking->branch_id = $request->branch_id;

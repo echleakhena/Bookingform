@@ -26,8 +26,8 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/Store', [UserController::class, 'Store'])->name('store.user');
             Route::delete('/Delete/{id}', [UserController::class, 'delete'])->name('delete.user');
         });
-   
-  
+
+
         Route::get('/Admin', [IndexController::class, 'Dashboard'])->name('dashboard');
         Route::post('/filter-data', [IndexController::class, 'filterData'])->name('filter.data');
 
@@ -67,7 +67,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/Update/{id}', [BranchController::class, 'Update'])->name('update.branch');
             Route::delete('/Delete/{id}', [BranchController::class, 'Delete'])->name('delete.branch');
         });
-   
+
 
     Route::get('/Logout', [AuthController::class, 'Logout'])->name('logout');
 });
